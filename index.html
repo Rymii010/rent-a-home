@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Rent-A-Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Rent-A-Home</h1>
+  <p>Find affordable homes near you</p>
+
+  <div class="controls">
+    <input type="text" id="searchInput" placeholder="Search by location or title">
+    <select id="priceFilter">
+      <option value="all">All Prices</option>
+      <option value="5000">Below Rs. 5000</option>
+      <option value="10000">Below Rs. 10000</option>
+      <option value="20000">Below Rs. 20000</option>
+    </select>
+    <button onclick="toggleTheme()">Toggle Theme</button>
+  </div>
+
+  <a class="btn" href="add.html">List Your Home</a>
+</header>
+
+<section class="homes" id="homeList"></section>
+
+<script src="script.js"></script>
+</body>
+</html>
