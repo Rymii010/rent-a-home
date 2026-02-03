@@ -1,322 +1,338 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Rent A Home</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent a Home Nepal</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+        body {
+            background-color: #f0f2f5;
+            color: #333;
+        }
 
-    body {
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #fff;
-    }
+        header {
+            background: #008080;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
 
-    .hidden {
-      display: none;
-    }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-    .login-wrapper {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 40px;
-    }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
 
-    .container {
-      width: 1000px;
-      background: rgba(255,255,255,0.08);
-      backdrop-filter: blur(16px);
-      border-radius: 22px;
-      display: grid;
-      grid-template-columns: 1.3fr 1fr;
-      overflow: hidden;
-      box-shadow: 0 25px 50px rgba(0,0,0,0.45);
-    }
+        .hero {
+            background: #004d4d;
+            color: white;
+            padding: 40px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
 
-    .info {
-      padding: 60px;
-    }
+        .search-bar {
+            margin-top: 20px;
+        }
 
-    .info h1 {
-      font-size: 44px;
-    }
+        .search-bar input {
+            padding: 10px;
+            width: 60%;
+            border: none;
+            border-radius: 4px;
+        }
 
-    .info span {
-      color: #00e5ff;
-    }
+        .search-bar button {
+            padding: 10px 20px;
+            background: #ff6f61;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
 
-    .info p {
-      margin-top: 15px;
-      line-height: 1.8;
-      color: #ddd;
-    }
+        h2 {
+            margin-bottom: 20px;
+            color: #004d4d;
+            border-bottom: 2px solid #008080;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
 
-    .features {
-      margin-top: 25px;
-    }
+        .listing {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            overflow: hidden;
+            display: flex;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
 
-    .features li {
-      list-style: none;
-      margin-bottom: 10px;
-    }
+        .listing img {
+            width: 300px;
+            height: auto;
+            object-fit: cover;
+        }
 
-    .features li::before {
-      content: "✔ ";
-      color: #00e5ff;
-    }
+        .details {
+            padding: 20px;
+            flex-grow: 1;
+        }
 
-    .login-box {
-      background: rgba(0,0,0,0.35);
-      padding: 45px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
+        .price {
+            color: #e67e22;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
 
-    .login-box h2 {
-      text-align: center;
-      margin-bottom: 25px;
-    }
+        .location {
+            color: #777;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
 
-    .input-group {
-      margin-bottom: 15px;
-    }
+        .features span {
+            background: #e0f2f1;
+            color: #00695c;
+            padding: 5px 10px;
+            border-radius: 4px;
+            margin-right: 10px;
+            font-size: 0.85rem;
+        }
 
-    input, select {
-      width: 100%;
-      padding: 13px;
-      border-radius: 12px;
-      border: none;
-      outline: none;
-      background: rgba(255,255,255,0.15);
-      color: #fff;
-    }
+        .contact-form {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 40px;
+            border-top: 5px solid #008080;
+        }
 
-    .btn {
-      padding: 13px;
-      border-radius: 14px;
-      border: none;
-      cursor: pointer;
-      background: linear-gradient(135deg, #00e5ff, #00bcd4);
-      font-weight: bold;
-      margin-top: 10px;
-    }
+        .form-group {
+            margin-bottom: 15px;
+        }
 
-    header {
-      padding: 50px 30px;
-      text-align: center;
-      background: rgba(0,0,0,0.35);
-    }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
 
-    .controls {
-      margin-top: 20px;
-    }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
 
-    .controls input {
-      max-width: 300px;
-    }
+        button.submit-btn {
+            background: #008080;
+            color: white;
+            padding: 12px;
+            width: 100%;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+        }
 
-    section {
-      padding: 60px 40px;
-    }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
 
-    .section-title {
-      text-align: center;
-      font-size: 34px;
-      margin-bottom: 35px;
-    }
-
-    .homes {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-      gap: 25px;
-    }
-
-    .home-card {
-      background: rgba(255,255,255,0.12);
-      padding: 20px;
-      border-radius: 18px;
-    }
-
-    .home-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 14px;
-      margin-bottom: 12px;
-    }
-
-    .home-card h3 {
-      margin-bottom: 6px;
-    }
-
-    .home-card p {
-      font-size: 14px;
-      color: #ddd;
-    }
-
-    .seller-form {
-      max-width: 600px;
-      margin: auto;
-      background: rgba(255,255,255,0.1);
-      padding: 30px;
-      border-radius: 20px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: rgba(0,0,0,0.4);
-      color: #bbb;
-    }
-
-    @media (max-width: 850px) {
-      .container {
-        grid-template-columns: 1fr;
-      }
-      .info {
-        text-align: center;
-      }
-    }
-  </style>
+        @media (max-width: 768px) {
+            .listing {
+                flex-direction: column;
+            }
+            .listing img {
+                width: 100%;
+                height: 200px;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-<div id="loginPage" class="login-wrapper">
-  <div class="container">
-    <div class="info">
-      <h1>Rent <span>A Home</span></h1>
-      <p>Find affordable, verified homes without hassle.</p>
-      <ul class="features">
-        <li>Verified listings</li>
-        <li>Direct owner contact</li>
-        <li>Transparent pricing</li>
-        <li>Secure platform</li>
-      </ul>
+    <header>
+        <h1>Rent a Home Nepal</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#listings">Apartments</a>
+            <a href="#contact">Business Enquiry</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section class="hero" id="home">
+            <h2>Find Your Flat in Kathmandu</h2>
+            <p>Best rental deals in Lazimpat, Thamel, Baneshwor, and more</p>
+            <div class="search-bar">
+                <input type="text" placeholder="Search by location (e.g. Baluwatar)">
+                <button>Search</button>
+            </div>
+        </section>
+
+        <section id="listings">
+            <h2>Latest Properties</h2>
+
+            <div class="listing">
+                <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=500" alt="Flat">
+                <div class="details">
+                    <div class="price">Rs 45,000 / month</div>
+                    <h3>2 BHK Flat in Lazimpat</h3>
+                    <p class="location">Near Lazimpat Patan Hospital, Kathmandu</p>
+                    <p>Sunny 2 bedroom flat with spacious living room and 24/7 water supply.</p>
+                    <br>
+                    <div class="features">
+                        <span>2 Beds</span>
+                        <span>1 Bath</span>
+                        <span>Parking</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="listing">
+                <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=500" alt="Flat">
+                <div class="details">
+                    <div class="price">Rs 25,000 / month</div>
+                    <h3>1 BHK Room in Thamel</h3>
+                    <p class="location">Near Tridevi Marg, Thamel</p>
+                    <p>Cozy single bedroom suitable for students or working professionals. Close to main market.</p>
+                    <br>
+                    <div class="features">
+                        <span>1 Bed</span>
+                        <span>1 Bath</span>
+                        <span>Semi-Furnished</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="listing">
+                <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=500" alt="Flat">
+                <div class="details">
+                    <div class="price">Rs 85,000 / month</div>
+                    <h3>Luxury 3 BHK in Sanepa</h3>
+                    <p class="location">Sanepa Height, Lalitpur</p>
+                    <p>Modern apartment with great view of the valley. Includes backup generator and lift.</p>
+                    <br>
+                    <div class="features">
+                        <span>3 Beds</span>
+                        <span>3 Baths</span>
+                        <span>Fully Furnished</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="listing">
+                <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=500" alt="Flat">
+                <div class="details">
+                    <div class="price">Rs 55,000 / month</div>
+                    <h3>3 BHK Flat in Baneshwor</h3>
+                    <p class="location">Baneshwor Heights, Kathmandu</p>
+                    <p>Well maintained flat in a quiet neighborhood. Close to public transport hub.</p>
+                    <br>
+                    <div class="features">
+                        <span>3 Beds</span>
+                        <span>2 Baths</span>
+                        <span>Bike Parking</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="listing">
+                <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b91d?w=500" alt="House">
+                <div class="details">
+                    <div class="price">Rs 120,000 / month</div>
+                    <h3>Bungalow in Maharajgunj</h3>
+                    <p class="location">Near Budhanilkantha Road</p>
+                    <p>Standalone house with small garden. Ideal for families or office space.</p>
+                    <br>
+                    <div class="features">
+                        <span>4 Beds</span>
+                        <span>4 Baths</span>
+                        <span>Garden</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="listing">
+                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=500" alt="Flat">
+                <div class="details">
+                    <div class="price">Rs 30,000 / month</div>
+                    <h3>Studio in Putalisadak</h3>
+                    <p class="location">Putalisadak, Kathmandu</p>
+                    <p>Compact studio flat in the heart of the city. Walking distance to exam centers.</p>
+                    <br>
+                    <div class="features">
+                        <span>Studio</span>
+                        <span>1 Bath</span>
+                        <span>Wifi Included</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="contact-form" id="contact">
+            <h2>Business & Agent Enquiry</h2>
+            <form id="enquiryForm">
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" required placeholder="Full Name">
+                </div>
+                <div class="form-group">
+                    <label>Mobile Number</label>
+                    <input type="tel" required placeholder="98XXXXXXXX">
+                </div>
+                <div class="form-group">
+                    <label>Enquiry Type</label>
+                    <select>
+                        <option>I want to rent</option>
+                        <option>I want to list property</option>
+                        <option>Business Partnership</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea rows="4" placeholder="Describe your requirement..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </section>
     </div>
 
-    <div class="login-box">
-      <h2>Login</h2>
-      <form onsubmit="login(event)">
-        <div class="input-group">
-          <input type="email" placeholder="Email" required>
-        </div>
-        <div class="input-group">
-          <input type="password" placeholder="Password" required>
-        </div>
-        <button class="btn">Login</button>
-      </form>
-    </div>
-  </div>
-</div>
+    <footer>
+        <p>&copy; 2026 Rent a Home Nepal. All Rights Reserved.</p>
+        <p>Contact: +977 9800000000 | sammynineti2@gmail.com</p>
+    </footer>
 
-<div id="mainPage" class="hidden">
-
-  <header>
-    <h1>Rent-A-Home</h1>
-    <p>Find homes near you</p>
-
-    <div class="controls">
-      <input type="text" id="searchInput" placeholder="Search location or title">
-      <button class="btn" onclick="searchHomes()">Search</button>
-    </div>
-
-    <button class="btn" onclick="logout()">Logout</button>
-  </header>
-
-  <section>
-    <h2 class="section-title">Available Homes</h2>
-    <div class="homes" id="homeList"></div>
-  </section>
-
-  <section>
-    <h2 class="section-title">List Your Property</h2>
-
-    <form class="seller-form" onsubmit="addHome(event)">
-      <div class="input-group">
-        <input type="text" id="title" placeholder="Property title (Koteshwor 2BHK)" required>
-      </div>
-      <div class="input-group">
-        <input type="text" id="owner" placeholder="Landlord / Seller name" required>
-      </div>
-      <div class="input-group">
-        <input type="tel" id="phone" placeholder="Mobile number" required>
-      </div>
-      <div class="input-group">
-        <input type="file" id="photo" accept="image/*" required>
-      </div>
-      <button class="btn">Add Listing</button>
-    </form>
-  </section>
-
-  <footer>
-    © 2026 Rent A Home
-  </footer>
-
-</div>
-
-<script>
-  const homes = [];
-
-  function login(e) {
-    e.preventDefault();
-    document.getElementById("loginPage").classList.add("hidden");
-    document.getElementById("mainPage").classList.remove("hidden");
-  }
-
-  function logout() {
-    document.getElementById("mainPage").classList.add("hidden");
-    document.getElementById("loginPage").classList.remove("hidden");
-  }
-
-  function addHome(e) {
-    e.preventDefault();
-
-    const title = document.getElementById("title").value;
-    const owner = document.getElementById("owner").value;
-    const phone = document.getElementById("phone").value;
-    const photo = document.getElementById("photo").files[0];
-
-    const reader = new FileReader();
-    reader.onload = function () {
-      homes.push({ title, owner, phone, img: reader.result });
-      renderHomes(homes);
-    };
-    reader.readAsDataURL(photo);
-
-    e.target.reset();
-  }
-
-  function renderHomes(list) {
-    const container = document.getElementById("homeList");
-    container.innerHTML = "";
-    list.forEach(h => {
-      container.innerHTML += `
-        <div class="home-card">
-          <img src="${h.img}">
-          <h3>${h.title}</h3>
-          <p>Landlord: ${h.owner}</p>
-          <p>Contact: ${h.phone}</p>
-        </div>
-      `;
-    });
-  }
-
-  function searchHomes() {
-    const q = document.getElementById("searchInput").value.toLowerCase();
-    const filtered = homes.filter(h => h.title.toLowerCase().includes(q));
-    renderHomes(filtered);
-  }
-</script>
-
+    <script>
+        document.getElementById('enquiryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you! We will call you shortly.');
+            this.reset();
+        });
+    </script>
 </body>
 </html>
