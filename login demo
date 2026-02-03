@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rent A Home</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+
+    .container {
+      width: 900px;
+      max-width: 95%;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .info {
+      padding: 50px;
+    }
+
+    .info h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+      color: #f9f9f9;
+    }
+
+    .info h1 span {
+      color: #00e5ff;
+    }
+
+    .info p {
+      line-height: 1.7;
+      font-size: 16px;
+      color: #dcdcdc;
+    }
+
+    .features {
+      margin-top: 30px;
+    }
+
+    .features li {
+      list-style: none;
+      margin-bottom: 12px;
+      font-size: 15px;
+    }
+
+    .features li::before {
+      content: "✔";
+      margin-right: 10px;
+      color: #00e5ff;
+    }
+
+    .login-box {
+      background: rgba(0, 0, 0, 0.35);
+      padding: 40px 35px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .login-box h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 28px;
+      color: #ffffff;
+    }
+
+    .input-group {
+      margin-bottom: 18px;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      font-size: 15px;
+    }
+
+    .input-group input::placeholder {
+      color: #bbb;
+    }
+
+    .login-btn {
+      margin-top: 10px;
+      padding: 12px;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #00e5ff, #00bcd4);
+      color: #000;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .login-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 229, 255, 0.4);
+    }
+
+    .extra {
+      margin-top: 18px;
+      text-align: center;
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    .extra a {
+      color: #00e5ff;
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+      .info {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Left Section -->
+    <div class="info">
+      <h1>Rent <span>A Home</span></h1>
+      <p>
+        Rent A Home is a modern platform designed to help you find comfortable,
+        affordable, and verified homes with ease. Whether you are a student,
+        family, or working professional, we connect you to the perfect place.
+      </p>
+
+      <ul class="features">
+        <li>Verified houses & apartments</li>
+        <li>Affordable pricing</li>
+        <li>Easy contact with owners</li>
+        <li>Safe & secure platform</li>
+      </ul>
+    </div>
+
+    <!-- Right Section -->
+    <div class="login-box">
+      <h2>Login</h2>
+      <form>
+        <div class="input-group">
+          <label>Email</label>
+          <input type="email" placeholder="Enter your email" required />
+        </div>
+
+        <div class="input-group">
+          <label>Password</label>
+          <input type="password" placeholder="Enter your password" required />
+        </div>
+
+        <button class="login-btn" type="submit">Login</button>
+      </form>
+
+      <div class="extra">
+        <p>Don't have an account? <a href="#">Sign up</a></p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
