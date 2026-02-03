@@ -49,3 +49,30 @@ if (priceFilter) priceFilter.addEventListener("change", renderHomes);
 function toggleTheme() {
   document.body.classList.toggle("dark");
 }
+function login() {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  if (email === "" || password === "") {
+    alert("Please fill all fields");
+    return;
+  }
+
+  // Save login state
+  localStorage.setItem("loggedIn", "true");
+
+  // Redirect to main page
+  window.location.href = "index.html";
+}
+function logout() {
+  localStorage.removeItem("loggedIn");
+  window.location.href = "login.html";
+}
+function socialLogin(provider) {
+  localStorage.setItem("loggedIn", "true");
+  localStorage.setItem("loginMethod", provider);
+
+  window.location.href = "index.html";
+}
+
+
