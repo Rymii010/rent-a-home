@@ -20,26 +20,26 @@
       "Logged in via " + method;
   }
 </script>
+<nav class="navbar">
+    <div class="logo">Rent-A-Home</div>
+    <div class="nav-right">
+        <p id="loginInfo"></p>
+        <button onclick="logout()" class="btn-primary">+ List Your Home</button>
+        <button onclick="logout()" class="btn-logout">Logout</button>
+    </div>
+</nav>
 
-<header>
-  <h1>Rent-A-Home</h1>
-  <p>Find affordable homes near you</p>
-
-  <div class="controls">
-    <input type="text" id="searchInput" placeholder="Search by location or title">
-    <select id="priceFilter">
-      <option value="all">All Prices</option>
-      <option value="5000">Below Rs. 5000</option>
-      <option value="10000">Below Rs. 10000</option>
-      <option value="20000">Below Rs. 20000</option>
-    </select>
-    <button onclick="toggleTheme()">Toggle Theme</button>
-  </div>
-
-  <a class="btn" href="add.html">List Your Home</a>
-</header>
-
-<section class="homes" id="homeList"></section>
+<section class="hero">
+    <div class="hero-content">
+        <h1>Find Your Perfect Place</h1>
+        <h3>Buy, Rent, or Sell with Confidence</h3>
+        
+        <div class="search-bar">
+            <input type="text" placeholder="City, Neighborhood, or Address...">
+            <button class="search-btn">Search</button>
+        </div>
+    </div>
+</section>
 
 <script src="script.js"></script>
 </body>
