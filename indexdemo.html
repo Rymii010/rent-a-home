@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rent‑A‑Home</title>
+
+  <!-- BLOCK ACCESS IF NOT LOGGED IN -->
+  <script>
+    if (localStorage.getItem("loggedIn") !== "true") {
+      window.location.href = "login.html";
+    }
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Poppins, sans-serif;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 30px;
+      background: #0f4c81;
+      color: white;
+    }
+
+    .btn-logout {
+      background: white;
+      color: #0f4c81;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .hero {
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(135deg, #e6f0ff, #cfe3ff);
+    }
+  </style>
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div>Rent‑A‑Home</div>
+  <div>
+    <span id="loginInfo"></span>
+    <button class="btn-logout" onclick="logout()">Logout</button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div>
+    <h1>Find Your Perfect Place</h1>
+    <p>Buy, Rent, or Sell with Confidence</p>
+  </div>
+</section>
+
+<script>
+  document.getElementById("loginInfo").innerText =
+    "Logged in via " + localStorage.getItem("loginMethod");
+
+  function logout() {
+    localStorage.clear();
+    window.location.href = "login.html";
+  }
+</script>
+
+</body>
+</html>
