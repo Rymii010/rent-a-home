@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | Rent‑A‑Home</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0f4c81, #1e90ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .login-container {
+      width: 380px;
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 35px 30px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+      text-align: center;
+    }
+
+    .login-container h1 {
+      color: #0f4c81;
+      margin-bottom: 8px;
+    }
+
+    .login-container p {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+
+    .input-group {
+      text-align: left;
+      margin-bottom: 18px;
+    }
+
+    .input-group label {
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      outline: none;
+      font-size: 15px;
+    }
+
+    .input-group input:focus {
+      border-color: #1e90ff;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #1e90ff, #0f4c81);
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .login-btn:hover {
+      opacity: 0.95;
+    }
+
+    .extra {
+      margin-top: 18px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .extra a {
+      color: #1e90ff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login-container">
+    <h1>Rent‑A‑Home</h1>
+    <p>Login to find your perfect home</p>
+
+    <div class="input-group">
+      <label>Email</label>
+      <input type="email" placeholder="Enter your email" />
+    </div>
+
+    <div class="input-group">
+      <label>Password</label>
+      <input type="password" placeholder="Enter your password" />
+    </div>
+
+    <!-- PROTOTYPE LOGIN -->
+    <button class="login-btn" onclick="location.href='index.html'">
+      Login
+    </button>
+
+    <div class="extra">
+      <p>Don’t have an account? <a href="#">Sign up</a></p>
+    </div>
+  </div>
+</body>
+</html>
