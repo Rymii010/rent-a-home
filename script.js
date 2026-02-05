@@ -1,30 +1,17 @@
-// SHOW LOGIN METHOD
-const method = localStorage.getItem("loginMethod");
-if (method) {
-  document.getElementById("loginInfo").innerText =
-    "Logged in via " + method;
-}
+alert("JavaScript loaded successfully");
 
-// LOGOUT FUNCTION
+// LOGOUT
 function logout() {
-  localStorage.clear();
-  window.location.href = "login.html";
+  alert("Logout clicked");
 }
 
-// GO TO ADD HOME PAGE
+// ADD HOME
 function goToAddHome() {
-  window.location.href = "add.html";
+  alert("Add Home clicked");
 }
 
-// SEARCH FUNCTION (DEMO)
+// SEARCH
 function searchHomes() {
-  const query = document.getElementById("searchInput").value;
-
-  if (query.trim() === "") {
-    alert("Please enter a location to search");
-    return;
-  }
-
-  alert("Searching homes in: " + query);
+  alert("Search clicked");
 }
 
